@@ -12534,10 +12534,11 @@ F1 score for test set: 0.8148.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Answer: My chosen model, SVM, works by trying to increase the distances between classes (individuals at-risk versus low risk) while also striving for the lowest amount of incorrect classes. It does well with multiple features, such as the included after-school activities, age, previous failed classes, etc. Essentially, it can combine a whole lot of categories of information into two distinct classes very accurately! It includes what is called the "kernel trick" - basically, it helps measure the similarity of two different points in higher dimensions, so that while in a 2D space they might not seem to be separable, adding an extra dimension makes them easier to classify.</p>
+<p>Answer: My chosen model, SVM, works by trying to maximize the "margin" between classes (individuals at-risk versus low risk) while also striving for the lowest amount of incorrect classes. The margin is based on where the boundaries of the classes get set (which the algorithm moves to maximize this margin). These boundaries are based on the algorithm looking at a subset of points around a given point for similarity; these points in the subset are the "support vectors". This helps to cut down on the processing time in predictions. These support vectors are weighted when we train the algorithm to be more or less important, to help further refine the accuracy.</p>
+<p>It does well with multiple features, such as the included after-school activities, age, previous failed classes, etc. Essentially, it can combine a whole lot of categories of information into two distinct classes very accurately! It includes what is called the "kernel trick" - basically, it helps measure the similarity of two different points in higher dimensions, so that while in a 2D space they might not seem to be separable, adding an extra dimension makes them easier to classify.</p>
 <p>The below image helps show this "higher dimension" action (from <a href="http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html">http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html</a>):</p>
 <p><a href="http://www.eric-kim.net/eric-kim-net/posts/1/imgs/data_2d_to_3d.png">http://www.eric-kim.net/eric-kim-net/posts/1/imgs/data_2d_to_3d.png</a></p>
-<p>In the image, there is not linear separation on the left image, but in a 3D space, you can more easily see where a line would fall (across the Z-axis).</p>
+<p>In the image, there is not linear separation on the left image, but in a 3D space (the right side), you can more easily see where a line would fall (across the Z-axis).</p>
 
 </div>
 </div>
